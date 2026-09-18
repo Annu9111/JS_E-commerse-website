@@ -359,6 +359,24 @@ main .section-hero {
   height: auto;
   transform: scaleX(-1);
 }
+  .custom-shape-divider-bottom-1789718249 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1789718249 svg {
+    position: relative;
+    display: block;
+    width: calc(126% + 1.3px);
+    height: 74px;
+}
+
+.custom-shape-divider-bottom-1789718249 .shape-fill {
+    fill: #FFFFFF;}
 
 /***** End Hero Section *****/
 
