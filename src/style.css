@@ -86,10 +86,16 @@ a {
 }
 
 /*! layout */
-.container {
+/* .container {
   max-width: 142rem;
   margin: 0 auto;
   padding: 9.6rem 2.4rem;
+} */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 :is(
@@ -674,82 +680,545 @@ textarea {
 
 /***** End contact Section *****/
 
-/***** Start Footer Section *****/
-footer {
+/* =========================================================
+   ANNU STORE - FOOTER
+========================================================= */
+
+.section-footer {
   width: 100%;
-  background: var(--buttonColor);
-  color: var(--backgroundColor);
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  margin-top: 6.4rem;
+  margin-top: 8rem;
+
+  background: #1f2937;
+  color: #ffffff;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-container .content_1 img {
-  height: auto;
-  width: 15rem;
-}
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
 
 .footer-container {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr
+    1.2fr
+    1.5fr;
+
+  gap: 5rem;
+
+  padding: 6rem 4rem;
+}
+
+
+/* =========================================================
+   COMMON COLUMN
+========================================================= */
+
+.footer-column {
   display: flex;
-  justify-content: space-between;
-  padding: 6rem 0;
+  flex-direction: column;
 }
 
-.footer-container h4 {
-  color: var(--white);
-  font-weight: 500;
-  letter-spacing: 0.1rem;
-  margin-bottom: 2.5rem;
-  font-size: 1.8rem;
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.footer-logo {
+  display: inline-block;
+
+  width: fit-content;
+
+  margin-bottom: 2rem;
 }
 
-.footer-container a {
+.footer-logo img {
   display: block;
-  text-decoration: none;
-  color: #cccccc;
+
+  width: 12rem;
+  height: auto;
+
+  padding: 0.6rem;
+
+  background: #ffffff;
+
+  border-radius: 0.4rem;
+}
+
+
+/* =========================================================
+   BRAND DESCRIPTION
+========================================================= */
+
+.footer-description {
+  max-width: 28rem;
+
+  margin-bottom: 2.5rem;
+
+  color: #d1d5db;
+
+  font-size: 1.4rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER HEADINGS
+========================================================= */
+
+.footer-column h4 {
+  position: relative;
+
+  margin-bottom: 2.8rem;
+
+  color: #ffffff;
+
+  font-size: 1.7rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08rem;
+}
+
+
+/* Blue underline */
+
+.footer-column h4::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -1rem;
+
+  width: 3.5rem;
+  height: 0.3rem;
+
+  background: #60a5fa;
+
+  border-radius: 2rem;
+}
+
+
+/* =========================================================
+   FOOTER LINKS
+========================================================= */
+
+.footer-column > a {
+  position: relative;
+
+  width: fit-content;
+
   margin-bottom: 1.5rem;
+
+  color: #d1d5db;
+
+  text-decoration: none;
+
   font-size: 1.4rem;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
-.footer-container .content_1 p,
-.footer-container .content_4 p {
-  color: #cccccc;
-  margin: 2.5rem 0;
-  font-size: 1.4rem;
+
+/* Arrow */
+
+.footer-column > a::before {
+  content: "→";
+
+  position: absolute;
+
+  left: -1.8rem;
+
+  color: #60a5fa;
+
+  opacity: 0;
+
+  transition: all 0.3s ease;
 }
 
-.footer-container .content_4 input[type="email"] {
-  background-color: var(--textColor);
-  border: none;
-  color: var(--backgroundColor);
-  outline: none;
-  padding: 1.4rem 0.8rem;
-  width: 100%;
+
+/* Hover */
+
+.footer-column > a:hover {
+  color: #60a5fa;
+
+  transform: translateX(0.5rem);
 }
 
-.footer-container .content_4 .f-mail {
+.footer-column > a:hover::before {
+  left: -1.5rem;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA
+========================================================= */
+
+.footer-social {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
+
+  gap: 1rem;
 }
 
-.footer-container .content_4 .bx {
-  color: var(--white);
+
+.footer-social a {
+  width: 4rem;
+  height: 4rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  font-size: 1.5rem;
+
+  transition: all 0.3s ease;
 }
 
-.f-design {
+
+.footer-social a:hover {
+  color: #ffffff;
+
+  background: #3b82f6;
+
+  border-color: #3b82f6;
+
+  transform: translateY(-0.4rem);
+
+  box-shadow:
+    0 0.8rem 2rem rgba(59, 130, 246, 0.25);
+}
+
+
+/* =========================================================
+   NEWSLETTER
+========================================================= */
+
+.footer-newsletter {
+  max-width: 32rem;
+}
+
+
+.footer-newsletter > p {
+  margin-bottom: 2rem;
+
+  color: #d1d5db;
+
+  font-size: 1.4rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   NEWSLETTER FORM
+========================================================= */
+
+.newsletter-form {
   width: 100%;
-  color: var(--white);
-  text-align: center;
+
+  display: flex;
+
+  align-items: center;
+
+  background: #ffffff;
+
+  border: 2px solid transparent;
+
+  border-radius: 0.6rem;
+
+  overflow: hidden;
+
+  transition: border-color 0.3s ease;
 }
 
-.f-design .f-design-txt {
-  border-top: 1px solid var(--secondaryColor);
-  padding: 1.6rem 0;
-  color: var(--secondaryColor);
+
+.newsletter-form:focus-within {
+  border-color: #60a5fa;
 }
 
-/***** End Footer Section *****/
+
+.newsletter-form input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 1.4rem 1.3rem;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #1f2937;
+
+  font-size: 1.3rem;
+}
+
+
+.newsletter-form input::placeholder {
+  color: #9ca3af;
+}
+
+
+/* Newsletter button */
+
+.newsletter-form button {
+  width: 5rem;
+  height: 5rem;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: #3b82f6;
+
+  color: #ffffff;
+
+  font-size: 1.5rem;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+
+.newsletter-form button:hover {
+  background: #2563eb;
+}
+
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.payment-section {
+  margin-top: 2.8rem;
+}
+
+
+.payment-section > span {
+  display: block;
+
+  margin-bottom: 1.2rem;
+
+  color: #d1d5db;
+
+  font-size: 1.3rem;
+}
+
+
+.payment-icons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+}
+
+
+.payment-icons i {
+  color: #ffffff;
+
+  font-size: 2.6rem;
+
+  transition: color 0.3s ease;
+}
+
+
+.payment-icons i:hover {
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  width: 100%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.footer-bottom-content {
+  min-height: 7rem;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 2rem;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #9ca3af;
+
+  font-size: 1.3rem;
+}
+
+
+.footer-bottom strong {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BOTTOM LINKS
+========================================================= */
+
+.footer-bottom-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2.5rem;
+}
+
+
+.footer-bottom-links a {
+  color: #9ca3af;
+
+  text-decoration: none;
+
+  font-size: 1.3rem;
+
+  transition: color 0.3s ease;
+}
+
+
+.footer-bottom-links a:hover {
+  color: #60a5fa;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4rem;
+
+    padding: 5rem 2rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .section-footer {
+    margin-top: 5rem;
+  }
+
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    gap: 4rem;
+
+    padding: 4rem 2rem;
+  }
+
+
+  .footer-column {
+    max-width: 100%;
+  }
+
+
+  .footer-newsletter {
+    max-width: 100%;
+  }
+
+
+  .footer-bottom-content {
+    flex-direction: column;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 2rem;
+  }
+
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 1.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .footer-container {
+    padding: 3.5rem 1.5rem;
+  }
+
+
+  .footer-social a {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+
+  .payment-icons i {
+    font-size: 2.3rem;
+  }
+
+
+  .footer-bottom p,
+  .footer-bottom-links a {
+    font-size: 1.2rem;
+  }
+
+}
 
 /**** Our Home product section  Starts ***/
 #productContainer {
