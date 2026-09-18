@@ -236,11 +236,11 @@ textarea:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.8rem; /* we override the main container padding property  */
+  padding: 0.8rem; /* we override the main container padding property  */
 }
 
 .section-navbar img {
-  width: 25%;
+  width: 15%;
 }
 
 .section-navbar .navbar ul {
