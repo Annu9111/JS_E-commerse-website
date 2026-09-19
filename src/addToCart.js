@@ -24,7 +24,7 @@ export const addToCart = (event, id, stock) => {
     (curProd) => curProd.id === id
   );
 
-//   console.log(existingProd);
+//   console.log(existingProd); 
 
   if (existingProd && quantity > 1) {
     quantity = Number(existingProd.quantity) + Number(quantity);

@@ -11,4 +11,4 @@ export const getCartProductFromLS = () => {
   updateCartValue(cartProducts);
 
   return cartProducts;
-};
+};    
