@@ -43,7 +43,7 @@ export const addToCart = (event, id, stock) => {
 
   if (existingProd) {
     // alert("bhai duplicate hai");
-    return false;
+    return false; 
   }
 
   price = Number(price * quantity);
