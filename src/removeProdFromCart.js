@@ -13,7 +13,7 @@ export const removeProdFromCart = (id) => {
   let removeDiv = document.getElementById(`card${id}`);
   if (removeDiv) {
     removeDiv.remove();
-    //show toast when product added to the cart
+    //show toast when product added to th e cart
     showToast("delete", id);
   }
 
