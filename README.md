@@ -9,12 +9,6 @@ https://js-e-commerse-website-a4gszyohe-annu-sonis-projects.vercel.app/
 
 ---
 
-## 📸 Preview
-
-![Annu Store Preview](https://js-e-commerce-website.vercel.app/images/
-
----
-
 ## ✨ Features
 
 - 🛍️ Modern E-Commerce UI
