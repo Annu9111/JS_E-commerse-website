@@ -1,60 +1,83 @@
-import { getCartProductFromLS } from "./getCartProducts";
-import { showToast } from "./showToast";
-import { updateCartValue } from "./updateCartValue";
+import { getCartProductFromLS } from "./getCartProducts.js";
+import { showToast } from "./showToast.js";
+import { updateCartValue } from "./updateCartValue.js";
 
-// -----------------------------------------------------
-// to get the cart data from localStorage
-// to update the cart value and also to get the data always ready from localStorage
-// --------------------------------------------------------
+// Get cart data from localStorage
 getCartProductFromLS();
 
-// -----------------------------------------------------
-// to add the data into localStorage
-// --------------------------------------------------------
+// Add product to cart
 export const addToCart = (event, id, stock) => {
   let arrLocalStorageProduct = getCartProductFromLS();
 
   const currentProdElem = document.querySelector(`#card${id}`);
-  let quantity = currentProdElem.querySelector(".productQuantity").innerText;
-  let price = currentProdElem.querySelector(".productPrice").innerText;
-  //   console.log(quantity, price);
+
+  let quantity = currentProdElem
+    .querySelector(".productQuantity")
+    .innerText;
+
+  let price = currentProdElem
+    .querySelector(".productPrice")
+    .innerText;
+
+  // Remove ₹ symbol
   price = price.replace("₹", "");
 
+  quantity = Number(quantity);
+  price = Number(price);
+
+  // Check if product already exists
   let existingProd = arrLocalStorageProduct.find(
     (curProd) => curProd.id === id
   );
 
-//   console.log(existingProd); 
-
-  if (existingProd && quantity > 1) {
-    quantity = Number(existingProd.quantity) + Number(quantity);
-    price = Number(price * quantity);
-    let updatedCart = { id, quantity, price };
-
-    updatedCart = arrLocalStorageProduct.map((curProd) => {
-      return curProd.id === id ? updatedCart : curProd;
-    });
-    console.log(updatedCart);
-
-    localStorage.setItem("cartProductLS", JSON.stringify(updatedCart));
-    //show toast when product added to the cart
-    showToast("add", id);
-  }
-
+  // If product already exists
   if (existingProd) {
-    // alert("bhai duplicate hai");
-    return false; 
+    if (quantity > 1) {
+      quantity = Number(existingProd.quantity) + quantity;
+
+      const updatedCart = arrLocalStorageProduct.map((curProd) => {
+        return curProd.id === id
+          ? {
+              id: id,
+              quantity: quantity,
+              price: price * quantity,
+            }
+          : curProd;
+      });
+
+      localStorage.setItem(
+        "cartProductLS",
+        JSON.stringify(updatedCart)
+      );
+
+      updateCartValue(updatedCart);
+      showToast("add", id);
+
+      return;
+    }
+
+    // Product already exists and quantity is 1
+    return;
   }
 
-  price = Number(price * quantity);
-  quantity = Number(quantity);
+  // New product
+  const newProduct = {
+    id: id,
+    quantity: quantity,
+    price: price * quantity,
+  };
 
-  arrLocalStorageProduct.push({ id, quantity, price });
-  localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct));
+  arrLocalStorageProduct.push(newProduct);
 
-  //update the cart button value
+  // Save to localStorage
+  localStorage.setItem(
+    "cartProductLS",
+    JSON.stringify(arrLocalStorageProduct)
+  );
+
+  // Update cart count
   updateCartValue(arrLocalStorageProduct);
 
-  //show toast when product added to the cart
+  // Show toast
   showToast("add", id);
 };

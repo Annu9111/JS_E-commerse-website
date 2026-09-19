@@ -1,4 +1,4 @@
-import { getCartProductFromLS } from "./getCartProducts";
+import { getCartProductFromLS } from "./getCartProducts.js";
 
 export const fetchQuantityFromCartLS = (id, price) => {
   let cartProducts = getCartProductFromLS();

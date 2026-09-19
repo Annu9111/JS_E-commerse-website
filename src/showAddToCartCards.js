@@ -1,9 +1,9 @@
-import products from "./api/products.json";
-import { fetchQuantityFromCartLS } from "./fetchQuantityFromCartLS";
-import { getCartProductFromLS } from "./getCartProducts";
-import { incrementDecrement } from "./incrementDecrement";
-import { removeProdFromCart } from "./removeProdFromCart";
-import { updateCartProductTotal } from "./updateCartProductTotal";
+import products from "../api/products.json";
+import { fetchQuantityFromCartLS } from "./fetchQuantityFromCartLS.js";
+import { getCartProductFromLS } from "./getCartProducts.js";
+import { incrementDecrement } from "./incrementDecrement.js";
+import { removeProdFromCart } from "./removeProdFromCart.js";
+import { updateCartProductTotal } from "./updateCartProductTotal.js";
 
 let cartProducts = getCartProductFromLS();
 
