@@ -5,13 +5,13 @@ A modern and responsive **E-Commerce Website** built using **HTML, CSS, JavaScri
 Annu Store provides a clean shopping experience where users can browse products, manage quantities, add products to the cart, remove products, and view their order summary. Cart data is stored using **LocalStorage**, allowing the cart to persist across page refreshes.
 
 🌐 **Live Demo:**  
-https://js-e-commerce-website.vercel.app/
+js-e-commerse-website-a4gszyohe-annu-sonis-projects.vercel.app/
 
 ---
 
 ## 📸 Preview
 
-![Annu Store Preview](https://js-e-commerce-website.vercel.app/images/hero-image.png)
+![Annu Store Preview](https://js-e-commerce-website.vercel.app/images/
 
 ---
 
