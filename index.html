@@ -197,37 +197,34 @@
     <!-- ========== End policy ========== -->
 
 <!-- start our product section      -->
-<section class="section-products">
-  <div class="container">
-    <div class="section-common-heading">
-      Checkout Our Store 
-    </div>
-  </div>
-  <section class="container">
-    <div  id="productContainer">
+  <section class="section-products container">
+      <div class="">
+        <h2 class="section-common--heading">Checkout Our Store</h2>
+      </div>
 
-    </div>
-  </section>
-
-</section>
+      <section class="container">
+        <div id="productContainer"></div>
+      </section>
+    </section>
 
 <!-- product template section starts  -->
 
-<template id="productTemplate">
-  <div class="cards" id="cardValue">
-    <article class="information [card]">
-      <span class="category"></span>
-         <div class="imageContainer">
-          <img src="" alt="" class="productImage">
-         </div>
+    <template id="productTemplate">
+      <div class="cards" id="cardValue">
+        <article class="information [card]">
+          <span class="category"></span>
+          <div class="imageContainer">
+            <img class="productImage" src="" alt="" />
+          </div>
           <h2 class="productName"></h2>
-              <div class="productRating">
+
+          <div class="productRating">
             <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
             <i class="fa-solid fa-star"></i>
           </div>
+
           <p class="productDescription"></p>
 
           <div class="productPriceElement">
@@ -240,7 +237,7 @@
             <p class="productStock"></p>
           </div>
 
-           <div class="productQuantityElement">
+          <div class="productQuantityElement">
             <p class="productProperty">Quantity(Pieces)</p>
             <div class="stockElement">
               <button class="cartIncrement">+</button>
@@ -249,12 +246,12 @@
             </div>
           </div>
 
-               <button class="add-to-cart-button">
+          <button class="add-to-cart-button">
             <i class="fa-solid fa-cart-shopping"></i> Add To Cart
           </button>
-    </article>
-  </div>
-</template>
+        </article>
+      </div>
+    </template>
 <!-- product template section ends  -->
 
 <!-- end our product section      -->
@@ -488,6 +485,6 @@
 
 <!-- ========== End Footer Section ========== -->
 
-
+<script type="module"  src="main.js"></script>
 </body>
 </html>
