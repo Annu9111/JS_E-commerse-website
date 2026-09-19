@@ -27,11 +27,11 @@ export const showProductContainer = (products) => {
       price * 4
     }`;
 
-    // productClone
-    //   .querySelector(".stockElement")
-    //   .addEventListener("click", (event) => {
-    //     homeQuantityToggle(event, id, stock);
-    //   });
+    productClone
+      .querySelector(".stockElement")
+      .addEventListener("click", (event) => {
+        homeQuantityToggle(event, id, stock);
+      });
 
     // productClone
     //   .querySelector(".add-to-cart-button")
